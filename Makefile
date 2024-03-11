@@ -9,6 +9,7 @@ clean:
 build:
 	go build -o ./dist/server ./cmd/server
 
+.PHONY: dist
 dist:
 	mkdir dist
 
