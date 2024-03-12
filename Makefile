@@ -1,5 +1,5 @@
 .PHONY: all
-all: dev_db dev clean dist build
+all: clean dist build
 
 DB_CONTAINER_NAME=vehicle-server-dev
 POSTGRES_USER=vehicle-server
@@ -20,7 +20,7 @@ dev_db:
 		postgis/postgis:16-3.4-alpine
 		
 .PHONY: dev
-dev:
+dev: dev_db
 	go run ./cmd/server \
 		-listen-address=:8080 \
 		-database-url=$(DATABASE_URL)
