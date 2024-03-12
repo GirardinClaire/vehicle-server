@@ -1,7 +1,6 @@
 package vehicle
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -27,14 +26,13 @@ func (d *DeleteHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	id, err := strconv.ParseInt(strId, 10, 64)
 
 	if err != nil {
-		fmt.Println("An error has occured", err)
-		rw.WriteHeader(http.StatusNotFound)
+		http.Error(rw, "Failed to parse ID", http.StatusInternalServerError)
 		return
 	}
 
 	test, err := d.store.Vehicle().Delete(r.Context(), id)
 	if err != nil {
-		fmt.Println("An error has occured", err)
+		http.Error(rw, "Failed to delete vehicle for the id", http.StatusInternalServerError)
 		return
 	}
 
