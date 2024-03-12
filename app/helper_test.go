@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cicd-lectures/vehicle-server/app"
-	"github.com/cicd-lectures/vehicle-server/storage/vehiclestore"
+	"github.com/GirardinClaire/vehicle-server/app"
+	"github.com/GirardinClaire/vehicle-server/storage/vehiclestore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"

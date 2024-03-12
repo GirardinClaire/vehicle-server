@@ -7,10 +7,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/cicd-lectures/vehicle-server/pkg/httputil"
-	"github.com/cicd-lectures/vehicle-server/pkg/testutil"
-	"github.com/cicd-lectures/vehicle-server/storage"
-	"github.com/cicd-lectures/vehicle-server/vehicle"
+	"github.com/GirardinClaire/vehicle-server/pkg/httputil"
+	"github.com/GirardinClaire/vehicle-server/pkg/testutil"
+	"github.com/GirardinClaire/vehicle-server/storage"
+	"github.com/GirardinClaire/vehicle-server/vehicle"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap"
 )

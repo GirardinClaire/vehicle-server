@@ -1,6 +1,6 @@
 package storage
 
-import "github.com/cicd-lectures/vehicle-server/storage/vehiclestore"
+import "github.com/GirardinClaire/vehicle-server/storage/vehiclestore"
 
 type MemoryStore struct {
 	VehicleStore *vehiclestore.MemoryStore
