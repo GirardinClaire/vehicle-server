@@ -18,3 +18,7 @@ jobs:
         run: make all
       - name: List dist output
         run: ls dist/
+      - name: Unit test
+        run: make unit_test
+      - name: Integration test
+        run: make integration_test
