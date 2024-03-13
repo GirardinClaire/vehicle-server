@@ -1,4 +1,4 @@
-IMAGE?=GirardinClaire/vehicle-server
+IMAGE?=girardinclaire/vehicle-server
 TAG?=dev
 
 .PHONY: all
@@ -27,7 +27,7 @@ integration_test:
 
 .PHONY: package
 package:
-	docker build -t docker-static-debian:1.0.0 .
+	docker build -t $(IMAGE):$(TAG) .
 
 
 DB_CONTAINER_NAME=vehicle-server-devgo
