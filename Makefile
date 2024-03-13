@@ -8,7 +8,7 @@ DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(P
 
 
 .PHONY: all
-all: clean dist unit_test integration_test build package
+all: clean dist unit_test integration_test build package release
 
 .PHONY: clean
 clean:
@@ -37,8 +37,6 @@ package:
 
 .PHONY: release
 release:
-	git tag $(TAG) -m "$(TAG_MESSAGE)"
-	git push $(TAG)
 	docker push $(IMAGE):$(TAG)
 
 .PHONY: dev
