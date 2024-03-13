@@ -41,5 +41,5 @@ jobs:
       - name: Push if on `main` branch
         if: contains('refs/heads/main', github.ref)
         run: |
-          make release  TAG="${{github.ref_name}}"
+          make release TAG="${{github.ref_name}}"
 
