@@ -1,8 +1,14 @@
 IMAGE?=girardinclaire/vehicle-server
 TAG?=dev
+DB_CONTAINER_NAME=vehicle-server-devgo
+POSTGRES_USER=vehicle-server
+POSTGRES_PASSWORD=secret
+POSTGRES_DB=vehicle-server
+DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
+
 
 .PHONY: all
-all: clean unit_test integration_test dist build package
+all: clean dist unit_test integration_test build package
 
 .PHONY: clean
 clean:
@@ -28,13 +34,6 @@ integration_test:
 .PHONY: package
 package:
 	docker build -t $(IMAGE):$(TAG) .
-
-
-DB_CONTAINER_NAME=vehicle-server-devgo
-POSTGRES_USER=vehicle-server
-POSTGRES_PASSWORD=secret
-POSTGRES_DB=vehicle-server
-DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
 
 .PHONY: dev
 dev: dev_db
