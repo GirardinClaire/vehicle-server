@@ -22,3 +22,5 @@ jobs:
         run: make unit_test
       - name: Integration test
         run: make integration_test
+      - name: Package Application
+        run: make package
