@@ -35,6 +35,12 @@ integration_test:
 package:
 	docker build -t $(IMAGE):$(TAG) .
 
+.PHONY: release
+release:
+	git tag $(TAG) -m "$(TAG_MESSAGE)"
+	git push $(TAG)
+	docker push $(IMAGE):$(TAG)
+
 .PHONY: dev
 dev: dev_db
 	go run ./cmd/server \
